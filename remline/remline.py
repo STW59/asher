@@ -16,8 +16,6 @@ Written by Stephen E. White
 import os
 
 MAX_LENGTH = 1340
-INPUT_DIR = 'E:/Spectroscopy Group/Stephen/20170607 Gln AmI Mystery Peak/Raw/'
-OUTPUT_DIR = 'E:/Spectroscopy Group/Stephen/20170607 Gln AmI Mystery Peak/'
 
 
 def remove_line_dir(path):
