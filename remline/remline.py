@@ -94,6 +94,6 @@ def remove_line(file_set, num_files, input_dir, output_dir):
 def main():
     # remove_line('D2O_3min_10spc', 10, 'E:/Spectroscopy Group/Stephen/Test Data/', 'E:/Spectroscopy Group/Stephen/Test Data/Shortened/')
 
-    remove_line_dir('E:/Spectroscopy Group/Stephen/Test Data/')
+    remove_line_dir('E:/Spectroscopy Group/2017-08-17 Q20 Fibrils 37C/')
 
 main()
