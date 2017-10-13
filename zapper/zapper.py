@@ -1,4 +1,7 @@
-# TODO: Delete the last row of the data files if greater than 1340
+#!/usr/local/bin/python
+
+
+#  TODO: Delete the last row of the data files if greater than 1340
 def zapper(inFile, reference, factor, window, numFiles):
     refSpectFile = open(reference, 'r')
 
@@ -18,5 +21,6 @@ def lastRow(fileName):
 
 def main():
     None
+
 
 main()

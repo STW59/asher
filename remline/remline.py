@@ -1,3 +1,5 @@
+#!/usr/local/bin/python3
+
 """
 This program is designed to remove any lines past the designated MAX_LENGTH in a given spectrum file.
 Written by Stephen E. White
