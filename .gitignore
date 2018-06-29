@@ -1,5 +1,12 @@
 
-/.idea/
-/plotting/ramachandran/*.pdb
-/plotting/twodplots/*.txt
+# Root directories
+.idea/
 .vscode/
+
+# Plotting directories
+plotting/ramachandran/*.pdb
+plotting/twodplots/data*
+plotting/twodplots/__pycache__/
+
+# Spectral analysis directories
+remline/.ipynb_checkpoints/

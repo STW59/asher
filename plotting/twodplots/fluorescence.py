@@ -52,7 +52,7 @@ def plot2d(levels, cmap, emission, excitation, data, title):
 
 
 def plot_example():
-    file_name = '20180628 Starna Cuvette S1R1.txt'
+    file_name = 'data/20180628 Starna Cuvette S1R1.txt'
     emission = np.arange(200, 802, 2)
     excitation = np.arange(200, 504, 4)
     levels = (range(0, 2000000, 50000))
@@ -64,8 +64,8 @@ def plot_example():
 
 
 def subtract_example():
-    file_1_name = '20180629 50 mcg mL Myoglobin S1R1.txt'
-    file_2_name = '20180629 50 mcg mL Myoglobin S1R1 Run 2.txt'
+    file_1_name = 'data/20180629 50 mcg mL Myoglobin S1R1.txt'
+    file_2_name = 'data/20180629 50 mcg mL Myoglobin S1R1 Run 2.txt'
     emission = np.arange(200, 802, 2)
     excitation = np.arange(200, 504, 4)
     levels = list(range(-2000000, 2000000, 50000))
