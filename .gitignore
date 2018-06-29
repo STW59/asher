@@ -1,4 +1,5 @@
 
 /.idea/
-/ramachandran/*.pdb
-/plotting/3dplots/*.txt
+/plotting/ramachandran/*.pdb
+/plotting/2dplots/*.txt
+.vscode/
