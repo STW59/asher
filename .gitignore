@@ -1,5 +1,5 @@
 
 /.idea/
 /plotting/ramachandran/*.pdb
-/plotting/2dplots/*.txt
+/plotting/twodplots/*.txt
 .vscode/
