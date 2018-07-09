@@ -5,6 +5,7 @@ import numpy as np
 from matplotlib import cm
 
 
+# Leave me alone!
 def data_extract(file_name, emission, excitation):
     data = [[0 for setrow in range(len(emission))] for setcol in range(len(excitation))]
     with open(file_name, 'r') as read_file:
@@ -24,6 +25,7 @@ def data_extract(file_name, emission, excitation):
     return data
 
 
+# Leave me alone!
 def fluorescence_subtract(data_set_1, data_set_2, emission, excitation):
     data_sub = [[0 for setrow in range(len(emission))] for setcol in range(len(excitation))]
     row_count = 0
@@ -37,13 +39,14 @@ def fluorescence_subtract(data_set_1, data_set_2, emission, excitation):
     return data_sub
 
 
+# Leave me alone!
 def plot2d(levels, cmap, emission, excitation, data, title):
     data_set = np.array(data)
     plt.contourf(emission, excitation, data_set, levels, cmap=cm.get_cmap(cmap, levels))
     plt.colorbar()
 
-    plt.xlim(200, 800)
-    plt.ylim(200, 500)
+    plt.xlim(min(emission), max(emission) - 2)
+    plt.ylim(min(excitation), max(excitation) - 4)
     plt.axis('equal')
     plt.title(title)
     plt.xlabel('Emission Wavelength (nm)')
@@ -52,25 +55,31 @@ def plot2d(levels, cmap, emission, excitation, data, title):
 
 
 def plot_example():
-    file_name = 'data/20180628 Starna Cuvette S1R1.txt'
+    # Edit me!
+    file_name = 'data/20180702 50 mcg mL Myoglobin S1R1.txt'
     emission = np.arange(200, 802, 2)
     excitation = np.arange(200, 504, 4)
+    title = '50 mcg/mL Myoglobin'
+
+    # Leave me alone
     levels = (range(0, 2000000, 50000))
     cmap = cm.nipy_spectral
-    title = 'Empty Starna Cuvette'
 
     plot_data = data_extract(file_name, emission, excitation)
     plot2d(levels, cmap, emission, excitation, plot_data, title)
 
 
 def subtract_example():
+    # Edit me!
     file_1_name = 'data/20180629 50 mcg mL Myoglobin S1R1.txt'
     file_2_name = 'data/20180629 50 mcg mL Myoglobin S1R1 Run 2.txt'
     emission = np.arange(200, 802, 2)
     excitation = np.arange(200, 504, 4)
-    levels = list(range(-2000000, 2000000, 50000))
-    cmap = cm.bwr
     title = 'Run 1 - Run 2'
+
+    # Leave me alone!
+    levels = list(range(-800000, 800000, 50000))
+    cmap = cm.bwr
 
     myoglobin_1 = data_extract(file_1_name, emission, excitation)
     myoglobin_2 = data_extract(file_2_name, emission, excitation)
@@ -78,5 +87,7 @@ def subtract_example():
     myoglobin_data = fluorescence_subtract(myoglobin_1, myoglobin_2, emission, excitation)
     plot2d(levels, cmap, emission, excitation, myoglobin_data, title)
 
-# plot_example()
+
+# Put a "# " in front of the one you DON'T want to run
+plot_example()
 # subtract_example()
