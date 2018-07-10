@@ -93,10 +93,9 @@ def remove_line(file_set, num_files, input_dir, output_dir):
     print('Files processed: {}'.format(file_count))
 
 
-def main():
+def remove_line_run():
     # remove_line('D2O_3min_10spc', 10, 'E:/Spectroscopy Group/Stephen/Test Data/', 'E:/Spectroscopy Group/Stephen/Test Data/Shortened/')
-
     remove_line_dir('D:/OneDrive - University of Pittsburgh/Asher Lab/Lab Stuff/DOSY Letter/20180419 NDQ20 UVRR 204 nm/')
 
 
-main()
+# remove_line_run()

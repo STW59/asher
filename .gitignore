@@ -2,6 +2,7 @@
 # Root directories
 .idea/
 .vscode/
+test_data/
 
 # Plotting directories
 plotting/ramachandran/*.pdb

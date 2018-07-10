@@ -22,6 +22,7 @@ def data_extract(file_name, emission, excitation):
                             data[column_count - 2][row_count - 3] = column
                         except IndexError:
                             pass
+    read_file.close()
     return data
 
 
@@ -71,11 +72,11 @@ def plot_example():
 
 def subtract_example():
     # Edit me!
-    file_1_name = 'data/20180629 50 mcg mL Myoglobin S1R1.txt'
-    file_2_name = 'data/20180629 50 mcg mL Myoglobin S1R1 Run 2.txt'
-    emission = np.arange(200, 802, 2)
-    excitation = np.arange(200, 504, 4)
-    title = 'Run 1 - Run 2'
+    file_1_name = 'data/20180703 3 mcg mL Myoglobin vacuumed S1R1.txt'
+    file_2_name = 'data/20180705 3 mcg mL Myoglobin Xe S1R1.txt'
+    emission = np.arange(200, 488, 2)
+    excitation = np.arange(200, 356, 4)
+    title = '3 mcg/mL Myo - Myo Xe'
 
     # Leave me alone!
     levels = list(range(-800000, 800000, 50000))
