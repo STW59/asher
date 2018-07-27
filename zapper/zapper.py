@@ -4,6 +4,7 @@ import numpy as np
 import os
 import scipy.stats as stats
 from remline.remline import remove_line_dir
+from plotting.ramanplots.tworamanspectra import plottwosets
 
 
 def data_extract(input_dir, file_name, x_length):
@@ -43,6 +44,7 @@ def zap_dir(factor, working_dir):
 
     for data_set in data_sets:
         for working_file in source_files:
+            print('Zapping file ', working_file)
             zapped_data = [[0 for rows in range(0, 1340, 1)] for cols in range(2)]
             set_zapped_wave = True
             if str(data_set) in str(working_file):
@@ -65,7 +67,7 @@ def zap_dir(factor, working_dir):
                                         zapped_data[1][row_count] = working_data[1][row_count]
                                     else:
                                         xrange = []
-                                        for x in range(row_count - 2, row_count + 3, 1):
+                                        for x in range(row_count - 3, row_count + 4, 1):
                                             try:
                                                 xrange.append(x)
                                             except IndexError:
@@ -83,13 +85,13 @@ def zap_dir(factor, working_dir):
 
                             set_zapped_wave = False
                             column_count += 1
-            output_file_name = working_file[:-4] + 'z' + working_file[-4:]
-            output_file = open(working_dir + '/Zapped/' + output_file_name, 'w')
-            zapped_data = np.transpose(zapped_data)
-            for row in zapped_data:
-                output_file.write('%s\t%s\n' % (row[0], row[1]))
-            output_file.close()
-            # TODO: fix bug that overwrites all values to zero on next data set run.
+                output_file_name = working_file[:-4] + 'z' + working_file[-4:]
+                output_file = open(working_dir + '/Zapped/' + output_file_name, 'w')
+                zapped_data = np.transpose(zapped_data)
+                for row in zapped_data:
+                    output_file.write('%s\t%s\n' % (row[0], row[1]))
+                output_file.close()
+                # plottwosets(working_data, np.transpose(zapped_data), working_file)
 
 
 def zap_oxygen(input_file_name):
@@ -103,4 +105,4 @@ def zap_oxygen(input_file_name):
         pass
 
 
-zap_dir(0.25, 'C:/Users/sewhi/Documents/Python Scripts/asher/test_data/')
+zap_dir(0.25, 'D:/OneDrive - University of Pittsburgh/Xenon Binding Project Shared Folder/204 nm Raman Data/20180718 Myoglobin Tests/')

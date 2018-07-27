@@ -57,9 +57,9 @@ def plot2d(levels, cmap, emission, excitation, data, title):
 
 def plot_example():
     # Edit me!
-    file_name = 'data/20180702 50 mcg mL Myoglobin S1R1.txt'
-    emission = np.arange(200, 802, 2)
-    excitation = np.arange(200, 504, 4)
+    file_name = 'data/20180716 Tyrosine S1R1 Run 3.txt'
+    emission = np.arange(200, 482, 2)
+    excitation = np.arange(200, 354, 4)
     title = '50 mcg/mL Myoglobin'
 
     # Leave me alone
